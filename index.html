@@ -7,8 +7,12 @@
 	</head>
 	<body>
 		<script>
-			// window.location.replace("https://medium.com");
-			console.log(window.location.pathname);
+			const uri = "https://raw.githubusercontent.com/MrSaky/tests/main/";
+			const params = new URLSearchParams(window.location.search);
+			if (params.has("f")) {
+				const fileName = params.get("f");
+				window.location.replace(`${uri}${fileName}`);
+			}
 		</script>
 	</body>
 </html>
